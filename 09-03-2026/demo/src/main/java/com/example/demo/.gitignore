@@ -1,0 +1,17 @@
+# node modules
+node_modules/
+
+# environment files
+.env
+
+# Python cache
+__pycache__/
+
+# VS Code settings
+.vscode/
+
+# log files
+*.log
+
+# OS files
+.DS_Store
