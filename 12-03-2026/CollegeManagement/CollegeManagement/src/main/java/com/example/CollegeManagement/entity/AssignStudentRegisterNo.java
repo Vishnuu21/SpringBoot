@@ -8,24 +8,22 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "manager")
-public class CollegeManagement {
+@Table(name = "assign_student_register_no")
+public class AssignStudentRegisterNo {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long departmentId;
+    private long registerId;
 
     @Column(name = "RegisterNo")
     private String studentRegisterNo;
 
-    @Column(name = "department")
-    private String department;
-
-    public long getDepartmentId() {
-        return departmentId;
+    public long getRegisterId() {
+        return registerId;
     }
 
-    public void setDepartmentId(long departmentId) {
-        this.departmentId = departmentId;
+    public void setRegisterId(long registerId) {
+        this.registerId = registerId;
     }
 
     public String getStudentRegisterNo() {
@@ -35,14 +33,4 @@ public class CollegeManagement {
     public void setStudentRegisterNo(String studentRegisterNo) {
         this.studentRegisterNo = studentRegisterNo;
     }
-
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-
-    
 }

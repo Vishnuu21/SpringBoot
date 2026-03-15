@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.CollegeManagement.dto.request.CollegeManagementRequest;
+import com.example.CollegeManagement.dto.request.AssignTeacherDepartmentRequest;
 import com.example.CollegeManagement.dto.request.TeacherRequest;
 import com.example.CollegeManagement.dto.response.TeacherApiResponse;
 import com.example.CollegeManagement.dto.response.TeacherResponse;
@@ -15,7 +15,8 @@ import com.example.CollegeManagement.service.TeacherService;
 @RestController
 @RequestMapping("/teacher")
 public class TeacherController {
-     private final TeacherService teacherService;
+
+    private final TeacherService teacherService;
 
     public TeacherController(TeacherService teacherService) {
         this.teacherService = teacherService;
@@ -28,9 +29,10 @@ public class TeacherController {
     }
 
     @PostMapping("/{id}/department")
-    public TeacherApiResponse<TeacherResponse> assignDepartment(@PathVariable long id,
-            @RequestBody CollegeManagementRequest request) {
-        TeacherResponse response = teacherService.getCollegeData(id, request.getDepartment());
+    public TeacherApiResponse<TeacherResponse> assignDepartment(
+            @PathVariable long id,
+            @RequestBody AssignTeacherDepartmentRequest request) {
+        TeacherResponse response = teacherService.assignDepartment(id, request.getDepartment());
         return new TeacherApiResponse<>("success", response);
     }
 }
