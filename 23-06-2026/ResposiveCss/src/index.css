@@ -1,0 +1,20 @@
+/* @import "tailwindcss";
+
+body {
+ background-size: cover;    
+  background-image: url("https://images5.alphacoders.com/350/thumb-1920-350844.jpg");
+} */
+
+
+
+@import "tailwindcss";
+
+body {
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.08), rgba(0,0,0,0.8)),
+    url("https://images5.alphacoders.com/350/thumb-1920-350844.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
